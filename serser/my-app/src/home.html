@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/css/master.css" />
+    <link rel="stylesheet" href="/css/css/home.css" />
+
+    <!-- JavaScript -->
+    <script type="module" src="./js/system/home.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar bg-body-tertiary fixed-top container-fluid bg">
+      <div class="col-10 container-fluid">
+        <!-- Search Form -->
+        <form id="search_form" class="col d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="text"
+            placeholder="Search"
+            name="keyword"
+            aria-label="Search"
+          />
+          <button class="unstyled-button p-1" id="srch" type="submit">
+            <img src="assets/imgs/search.png" />
+          </button>
+        </form>
+        <!-- Sign Out Button -->
+        <a class="col-1 ps-2" href="#" id="btn_signout">
+          <button class="unstyled-button">
+            <img src="assets/imgs/signout.png" />
+          </button>
+        </a>
+      </div>
+      <!-- Navigation Links -->
+      <div class="col-10 container-fluid pt-1">
+        <a href="home.html">
+          <button class="unstyled-button">
+            <img src="assets/imgs/inhome.png" />
+          </button>
+        </a>
+        <a href="profile.html">
+          <button class="unstyled-button">
+            <img src="assets/imgs/user.png" />
+          </button>
+        </a>
+        <a href="fav.html">
+          <button class="unstyled-button">
+            <img src="assets/imgs/bookmark.png" />
+          </button>
+        </a>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <br /><br />
+    <br />
+    <br />
+
+    <!-- Notifications -->
+    <div class="container">
+      <div class="alert alert-success d-none" role="alert"></div>
+      <div class="alert alert-danger d-none" role="alert"></div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+      <div>
+        <div>
+          <!-- Upload Form -->
+          <form id="form_upload">
+            <div>
+              <!-- Button to Trigger Modal -->
+              <a
+                id="modal_show"
+                data-bs-toggle="modal"
+                data-bs-target="#form_modal"
+              >
+              </a>
+            </div>
+          </form>
+          <!-- End Upload Form -->
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="form_modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Service Information
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Loading Spinner -->
+              <div id="loading_spinner" class="text-center">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Loading...</p>
+              </div>
+              <!-- Display Service Details -->
+              <div id="service_details" style="display: none">
+                <!-- Service Name -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <h5 id="service_name_display"></h5>
+                  </div>
+                </div>
+                <!-- Hourly Rate -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <p id="hourly_rate_display"></p>
+                  </div>
+                </div>
+                <!-- Description -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <p id="description_display"></p>
+                  </div>
+                </div>
+
+                <!-- Facebook -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <a id="facebook_link" href="#" target="_blank">
+                      <button type="button" class="btn btn-outline-primary">
+                        Facebook
+                      </button>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Image -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <img
+                      id="image_display"
+                      src=""
+                      alt="Service Image"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="modal_close"
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Modal -->
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination" id="get_pagination"></ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Data Display -->
+    <div class="container" id="get_data"></div>
+
+    <!-- Pagination -->
+    <div class="d-flex justify-content-center">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination" id="get_pagination"></ul>
+      </nav>
+    </div>
+    <!-- End Container -->
+
+    <!-- Scripts -->
+    <script src="./js/capacitor-welcome.js" type="module"></script>
+  </body>
+</html>

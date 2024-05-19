@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/css/master.css" />
+    <link rel="stylesheet" href="/css/css/home.css" />
+
+    <script type="module" src="./js/system/profile.js"></script>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary fixed-top container-fluid bg">
+      <div class="col-10 container-fluid">
+        <form class="col d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="unstyled-button p-1" id="srch" type="submit">
+            <img src="assets/imgs/search.png" />
+          </button>
+        </form>
+        <a class="col-1 ps-2" href="#" id="btn_signout"
+          ><button class="unstyled-button">
+            <img src="assets/imgs/signout.png" /></button
+        ></a>
+      </div>
+      <div class="col-10 container-fluid pt-1">
+        <a href="home.html"
+          ><button class="unstyled-button">
+            <img src="assets/imgs/home.png" /></button
+        ></a>
+        <a href="profile.html"
+          ><button class="unstyled-button">
+            <img src="assets/imgs/inuser.png" /></button
+        ></a>
+        <a href="fav.html"
+          ><button class="unstyled-button">
+            <img src="assets/imgs/bookmark.png" /></button
+        ></a>
+      </div>
+    </nav>
+    <br /><br /><br />
+    <br />
+    <br />
+
+    <!-- Notifications -->
+    <div class="container">
+      <div class="alert alert-success d-none" role="alert"></div>
+      <div class="alert alert-danger d-none" role="alert"></div>
+    </div>
+
+    <div class="container">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="text-center">
+            <br />
+            <img
+              src="assets/imgs/empty.png"
+              class="shadow rounded-circle"
+              alt="..."
+            />
+          </div>
+          <div class="container-fluid text-center p-2">
+            <a href="editprofile.html"
+              ><button class="btn btn-primary" type="button">
+                Edit Profile
+              </button></a
+            >
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Mark Kenth Paran</h5>
+              <p>Hello!</p>
+              <p class="card-text">
+                <small class="text-body-secondary"></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+      <div class="card">
+        <div class="shadow col-sm-12 rounded">
+          <!-- Upload Form -->
+          <form id="form_upload">
+            <div>
+              <div class="container p-5">
+                <p class="fs-4 text-center">
+                  <b>Want to upload your Service?</b>
+                </p>
+                <!-- Button to Trigger Modal -->
+                <button
+                  id="modal_show"
+                  type="button"
+                  class="btn btn-primary w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#form_modal"
+                >
+                  Upload Service
+                </button>
+              </div>
+            </div>
+          </form>
+          <!-- End Upload Form -->
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="container col-12">
+        <div class="card">
+          <div class="shadow col-sm-12 rounded">
+            <div class="container p-1">
+              <p class="fs-4 text-center">
+                <b>Your uploaded services</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="form_modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Service Information
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!-- Item Form -->
+            <form id="form_service">
+              <div class="modal-body">
+                <!-- Service Name Field -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="service_name"
+                      id="service_name"
+                      placeholder="Service Name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Hourly Rate Field -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <input
+                      class="form-control"
+                      type="number"
+                      name="hourly_rate"
+                      id="hourly_rate"
+                      min="0"
+                      step=".01"
+                      placeholder="Rate"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Description Field -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <textarea
+                      class="form-control"
+                      name="description"
+                      id="description"
+                      placeholder="Description"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Facebook link -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <textarea
+                      class="form-control"
+                      name="facebook"
+                      id="facebook"
+                      placeholder="Facebook Link (eg. https://www.facebook.com/john.doe)"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Image File Field -->
+                <div class="row mb-3">
+                  <div class="col-sm-12">
+                    <input
+                      class="form-control"
+                      type="file"
+                      name="image_path"
+                      accept="image/*"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Footer -->
+              <div class="modal-footer">
+                <button
+                  id="modal_close"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  class="btn btn-primary w-25 d-flex align-items-center justify-content-center"
+                  type="submit"
+                >
+                  Upload
+                </button>
+              </div>
+            </form>
+            <!-- End Item Form -->
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+
+      <!-- Data Display -->
+      <div class="row pb-5" id="get_data"></div>
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination" id="get_pagination"></ul>
+        </nav>
+      </div>
+    </div>
+    <!-- End Container -->
+
+    <script src="./js/capacitor-welcome.js" type="module"></script>
+  </body>
+</html>
